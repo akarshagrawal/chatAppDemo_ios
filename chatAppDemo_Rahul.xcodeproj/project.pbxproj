@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15241C20268FB875000E163D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15241C1F268FB875000E163D /* Extension.swift */; };
 		2F6BAF71268B5CDE00943195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BAF70268B5CDE00943195 /* AppDelegate.swift */; };
 		2F6BAF73268B5CDE00943195 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BAF72268B5CDE00943195 /* SceneDelegate.swift */; };
 		2F6BAF75268B5CDE00943195 /* ConservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BAF74268B5CDE00943195 /* ConservationsViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15241C1F268FB875000E163D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2F6BAF6D268B5CDE00943195 /* chatAppDemo_Rahul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatAppDemo_Rahul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6BAF70268B5CDE00943195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F6BAF72268B5CDE00943195 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15241C1C268FAE79000E163D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		15241C1D268FAE8F000E163D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15241C1E268FAEB6000E163D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2F6BAF64268B5CDE00943195 = {
 			isa = PBXGroup;
 			children = (
@@ -71,25 +94,11 @@
 				2F6BAF89268B604F00943195 /* Resources */,
 				2F6BAF88268B601900943195 /* Controllers */,
 				2F6BAF87268B601300943195 /* Views */,
-				2F6BAF86268B600D00943195 /* Models */,
-				2F6BAF85268B600400943195 /* ViewModels */,
+				15241C1D268FAE8F000E163D /* Model */,
+				15241C1E268FAEB6000E163D /* ViewModels */,
 				2F6BAF7E268B5CE600943195 /* Info.plist */,
 			);
 			path = chatAppDemo_Rahul;
-			sourceTree = "<group>";
-		};
-		2F6BAF85268B600400943195 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		2F6BAF86268B600D00943195 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		2F6BAF87268B601300943195 /* Views */ = {
@@ -104,7 +113,7 @@
 		2F6BAF88268B601900943195 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2FC05E31268DFE76007E0AEF /* Login */,
+				15241C1C268FAE79000E163D /* Login */,
 				2F6BAF74268B5CDE00943195 /* ConservationsViewController.swift */,
 				2F6BAF90268B625900943195 /* RegisterViewController.swift */,
 				2F6BAF8D268B623200943195 /* LoginViewController.swift */,
@@ -121,6 +130,7 @@
 			children = (
 				2F6BAF70268B5CDE00943195 /* AppDelegate.swift */,
 				2F6BAF72268B5CDE00943195 /* SceneDelegate.swift */,
+				15241C1F268FB875000E163D /* Extension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -132,13 +142,6 @@
 				2F6BAF7B268B5CE600943195 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		2FC05E31268DFE76007E0AEF /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +219,7 @@
 				2F6BAF97268B62BE00943195 /* VideoViewerViewController.swift in Sources */,
 				2F6BAF91268B625900943195 /* RegisterViewController.swift in Sources */,
 				2F6BAF75268B5CDE00943195 /* ConservationsViewController.swift in Sources */,
+				15241C20268FB875000E163D /* Extension.swift in Sources */,
 				2F6BAF71268B5CDE00943195 /* AppDelegate.swift in Sources */,
 				2F6BAF73268B5CDE00943195 /* SceneDelegate.swift in Sources */,
 				2F6BAF9B268B62DE00943195 /* ProfileViewController.swift in Sources */,
