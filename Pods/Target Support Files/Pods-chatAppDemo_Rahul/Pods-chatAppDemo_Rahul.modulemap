@@ -1,0 +1,6 @@
+framework module Pods_chatAppDemo_Rahul {
+  umbrella header "Pods-chatAppDemo_Rahul-umbrella.h"
+
+  export *
+  module * { export * }
+}

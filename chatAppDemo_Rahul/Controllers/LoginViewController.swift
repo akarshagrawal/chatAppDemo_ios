@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -48,7 +49,7 @@ class LoginViewController: UIViewController {
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = .white
-        field.isSecureTextEntry = true
+        //field.isSecureTextEntry = true
         
         return field
         
@@ -139,6 +140,14 @@ class LoginViewController: UIViewController {
             return
         }
         // Firbase login
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            guard let result = authResult, error == nil else {
+                print("Failed to login user with email & password")
+                return
+            }
+            let user = result.user
+            print ("User logged in:\(user)")
+        }
         
         
     }
