@@ -105,7 +105,7 @@ class RegisterViewController : UIViewController {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.circle")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
@@ -199,26 +199,43 @@ class RegisterViewController : UIViewController {
               !email.isEmpty,
               !password.isEmpty,
               password.count >= 6 else {
-            alertUserLoginError()
+            alertUserLoginError(message: "Fix the errors")
             return
         }
         // Firbase create account
-        FirebaseAuth.Auth.auth().createUser(withEmail: email,
-                                            password: password,
-                                            completion: {authResult, error in
-                                                guard let result = authResult, error == nil else {
-                                                    print("Error creating user")
-                                                    return
-                                                }
-                                                let user = result.user
-                                                print("created user: \(user)")
-                                            })
+        DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            guard !exists else {
+                // user already exists
+                strongSelf.alertUserLoginError(message: "Email address exists in DB")
+                return
+            }
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email,
+                                                password: password,
+                                                completion: {authResult, error in
+                                                    guard authResult != nil, error == nil else {
+                                                        print("Error creating user")
+                                                        return
+                                                    }
+                                                    //let user = result.user
+                                                    //print("created user: \(user)")
+                                                    DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
+                                                                                                        lastName: lastName,
+                                                                                                        emailAddress: email))
+                                                    strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+                                                })
+        })
+        
         
     }
     
-    func alertUserLoginError() {
+    func alertUserLoginError(message: String) {
         let alert = UIAlertController(title: "Oh no!",
-                                      message: "Please enter all information to create a new account.",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss",
                                       style: .cancel, handler: nil))
@@ -238,6 +255,8 @@ class RegisterViewController : UIViewController {
     }
 
 }
+
+
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
