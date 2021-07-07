@@ -186,6 +186,7 @@
 				2F6BAF6A268B5CDE00943195 /* Frameworks */,
 				2F6BAF6B268B5CDE00943195 /* Resources */,
 				377E19AD888AAB3495FB5EF7 /* [CP] Embed Pods Frameworks */,
+				3DE42401F0B49C8D9512E9F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +259,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-chatAppDemo_Rahul/Pods-chatAppDemo_Rahul-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DE42401F0B49C8D9512E9F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-chatAppDemo_Rahul/Pods-chatAppDemo_Rahul-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-chatAppDemo_Rahul/Pods-chatAppDemo_Rahul-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-chatAppDemo_Rahul/Pods-chatAppDemo_Rahul-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9350548F685082C485F9279 /* [CP] Check Pods Manifest.lock */ = {

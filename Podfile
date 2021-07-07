@@ -11,7 +11,8 @@ target 'chatAppDemo_Rahul' do
  pod 'Firebase/Database'
 #Facebook
  pod 'FBSDKLoginKit'
-
+#Google Sign in
+ pod 'GoogleSignIn'
   # Pods for chatAppDemo_Rahul
 
 end
